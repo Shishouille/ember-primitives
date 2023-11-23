@@ -9,13 +9,14 @@ import type { TOC } from '@ember/component/template-only';
 import type DocsService from 'docs-app/services/docs';
 import type { Page } from 'docs-app/services/types';
 import type UI from 'docs-app/services/ui';
+import type RouterService from '@ember/routing/router-service';
 
 /**
  * Converts 1-2-hyphenated-thing
  * to
  *   Hyphenated Thing
  */
-const titleize = (str: string) => {
+export const titleize = (str: string) => {
   return (
     str
       .split('-')
@@ -50,6 +51,7 @@ const NameLink: TOC<{ Element: HTMLAnchorElement; Args: { href: string; name: st
 export class Nav extends Component {
   @service declare docs: DocsService;
   @service declare ui: UI;
+  @service declare router: RouterService;
 
   get humanSelected() {
     let path = this.docs.selected?.path;
@@ -69,6 +71,10 @@ export class Nav extends Component {
     this.ui.isNavOpen = false;
   };
 
+  isActive = (link: string) => {
+    return this.router.currentURL === unExct(link);
+  };
+
   /**
    *
    * This nav needs an aria-label to get around
@@ -82,19 +88,25 @@ export class Nav extends Component {
    *  The links themselves remain the actual interactive elements.
    */
   <template>
-    <nav aria-label="Main Navigation" class={{if this.ui.isNavOpen "open"}}>
-      <ul>
+    <nav aria-label="Main Navigation" class={{if this.ui.isNavOpen "open"}} id="nav">
+      <a href="/">ember-primitives</a>
+      <ul class="nav-section">
         {{#each-in this.docs.grouped as |group pages|}}
-          <li>
+          <li class="nav-item">
             {{#if (isLoneIndex pages)}}
               {{#each pages as |page|}}
-                <NameLink @name={{group}} @href={{page.path}} {{on "click" this.closeNav}} />
+                <NameLink
+                  @name={{group}}
+                  @href={{page.path}}
+                  {{on "click" this.closeNav}}
+                  class="nav-link {{if (this.isActive page.path) 'active'}}"
+                />
               {{/each}}
             {{else}}
-              <h2>{{titleize group}}</h2>
-              <ul>
+              <h2 class="nav-title">{{titleize group}}</h2>
+              <ul class="nav-subsection">
                 {{#each pages as |page|}}
-                  <li>
+                  <li class="nav-subitem nav-link {{if (this.isActive page.path) 'active'}}">
                     <NameLink
                       @name={{page.name}}
                       @href={{page.path}}

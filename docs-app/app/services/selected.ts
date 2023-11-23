@@ -1,9 +1,9 @@
-import Service, { service } from '@ember/service';
-
 import { Compiled } from 'docs-app/markdown';
 import { use } from 'ember-resources';
 import { keepLatest } from 'reactiveweb/keep-latest';
 import { RemoteData } from 'reactiveweb/remote-data';
+
+import Service, { service } from '@ember/service';
 
 import type DocsService from './docs';
 import type { Page } from './types';
@@ -85,8 +85,10 @@ export default class Selected extends Service {
     return this.#findByPath(this.path);
   }
 
-  get #manifest() {
-    return this.docs.docs.value;
+  get section(): string | undefined {
+    if (!this.path) return;
+    const sectionRaw = this.path.split('/')[1];
+    return sectionRaw?.replace(/\d/g, '').replace(/-/g, ' ').trim() ?? '';
   }
 
   #findByPath = (path: string) => {

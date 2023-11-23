@@ -1,0 +1,17 @@
+#site-theme-toggle {
+  border-radius: var(--border-radius-round);
+  padding: var(--size-xxs);
+  cursor: pointer;
+  height: calc(var(--size-xl) + var(--size-xs));
+  width: calc(var(--size-xl) + var(--size-xs));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-blurry);
+}
+
+#site-theme-toggle svg {
+  height: var(--size-xl);
+  width: var(--size-xl);
+  fill: var(--color-text);
+}

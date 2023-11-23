@@ -1,0 +1,41 @@
+:root {
+  /* FONTS */
+  --font-weight-light: 100;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-size-3xl: 2rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-xl: 1.5rem;
+  --font-size-lg: 1.25rem;
+  --font-size-md: 1rem;
+  --font-size-sm: 0.9rem;
+  --font-size-xs: 0.75rem;
+
+  /* SPACING */
+  --spacing-unit: 1em;
+  --spacing-05: calc(0.2 * var(--spacing-unit));
+  --spacing-1: calc(0.25 * var(--spacing-unit));
+  --spacing-2: calc(0.5 * var(--spacing-unit));
+  --spacing-3: calc(0.75 * var(--spacing-unit));
+  --spacing-4: var(--spacing-unit);
+  --spacing-5: calc(1.25 * var(--spacing-unit));
+  --spacing-6: calc(2 * var(--spacing-unit));
+  --spacing-7: calc(3.25 * var(--spacing-unit));
+  --spacing-8: calc(5.25 * var(--spacing-unit));
+
+  /* BORDER RADIUS */
+  --border-radius-xs: 4px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 10px;
+  --border-radius-xl: 12px;
+  --border-radius-round: 9999px;
+
+  /* SIZES */
+  --size-xxs: 8px;
+  --size-xs: 12px;
+  --size-sm: 14px;
+  --size-md: 16px;
+  --size-lg: 18px;
+  --size-xl: 20px;
+}

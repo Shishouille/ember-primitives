@@ -1,0 +1,68 @@
+:root {
+  --color-surface: rgb(255, 255, 255);
+  --color-surface-hover: rgb(247, 247, 248);
+  --color-surface-focus: rgb(241, 242, 244);
+  --color-surface-blurry: rgba(255, 255, 255, 0.5);
+  --color-primary: rgb(123, 58, 235);
+  --color-text: rgb(13, 13, 23);
+  --color-text-subdued: rgb(39, 42, 49);
+  --color-text-light: rgb(97, 100, 107);
+  --color-primary-hover: rgb(123, 58, 235);
+  --color-primary-contrast: rgb(109, 40, 217);
+  --color-border: rgb(97, 100, 107);
+
+  --color-96ccd800-13a2-44d7-b550-66f3a79ddff9: rgb(201, 205, 210);
+  --color-9e5b58f8-9643-47bf-8a7b-9332be7b3920: rgb(195, 180, 252);
+  --color-yellow-background: #fcdf47;
+  --color-red-background: #feb2b2;
+  --color-green-background: #86eeab;
+  --color-c6120114-9088-4b26-838a-72029dd7be3c: rgba(166, 138, 248, 0.1);
+  --color-2dd6c8d7-ae47-4f9a-8ef4-d08e14ed5a38: rgba(249, 203, 21, 0.1);
+  --color-43daf808-4c2c-41c2-bb89-ac2b05c2bd62: rgba(252, 129, 129, 0.06);
+  --color-aa739c9e-e429-4c3b-ae41-8c09fa044700: rgba(74, 220, 127, 0.06);
+  --color-yellow-contrast: #c98a04;
+  --color-red-contrast: #e53e3e;
+  --color-green-contrast: #16a24a;
+
+  --color-blue-background: #3b81f4;
+  --color-red-light: #f56565;
+  --color-green-light: #22c35d;
+  --color-pink-light: #ea4898;
+
+  --color-yellow-transparent-light: rgba(249, 203, 21, 0.16);
+  --color-yellow-transparent: rgba(233, 178, 8, 0.32);
+  --color-red-transparent-light: rgba(252, 129, 129, 0.16);
+  --color-red-transparent: rgba(252, 129, 129, 0.32);
+  --color-green-transparent-light: rgba(74, 220, 127, 0.16);
+  --color-green-transparent: rgba(74, 220, 127, 0.32);
+  --color-primary-transparent-light: rgba(89, 33, 178, 0.16);
+  --color-primary-transparent: rgba(138, 91, 244, 0.32);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: rgb(5, 3, 13);
+    --color-surface-hover: rgb(13, 13, 23);
+    --color-surface-focus: rgb(18, 18, 28);
+    --color-surface-blurry: rgba(5, 3, 13, 0.2);
+    --color-primary: rgb(166, 138, 248);
+    --color-text: rgb(255, 255, 255);
+    --color-text-subdued: rgb #94979e;
+    --color-primary-hover: rgb(123, 58, 235);
+    --color-border: rgb(148, 151, 158);
+    --color-yellow-background: rgba(249, 203, 21, 0.3);
+    --color-red-background: rgba(252, 129, 129, 0.3);
+    --color-green-background: rgba(74, 220, 127, 0.3);
+    --color-yellow-contrast: #f9cb15;
+    --color-red-contrast: #fc8181;
+    --color-green-contrast: #4adc7f;
+    --color-yellow-transparent-light: rgba(249, 203, 21, 0.08);
+    --color-yellow-transparent: rgba(249, 203, 21, 0.24);
+    --color-red-transparent-light: rgba(252, 129, 129, 0.08);
+    --color-red-transparent: rgba(252, 129, 129, 0.24);
+    --color-green-transparent-light: rgba(74, 220, 127, 0.08);
+    --color-green-transparent: rgba(74, 220, 127, 0.24);
+    --color-primary-transparent-light: rgba(255, 255, 255, 0.08);
+    --color-primary-transparent: rgba(123, 58, 234, 0.64);
+  }
+}

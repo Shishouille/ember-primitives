@@ -1,0 +1,174 @@
+#layout {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas: "nav main-section";
+  min-height: 100vh;
+}
+
+#nav {
+  grid-area: nav;
+  height: 100%;
+  border-right: 1px solid var(--color-border);
+}
+
+/* NAVIGATION */
+
+#nav ul,
+#nav li {
+  list-style-type: none;
+}
+
+#nav ul {
+  padding: 0;
+}
+#nav a {
+  text-decoration: none;
+  color: var(--color-text-subdued);
+}
+
+.nav-section {
+  margin-left: var(--spacing-2);
+}
+
+.nav-item {
+  /* Add your styling for each navigation item here */
+}
+
+.nav-title {
+  font-weight: 500;
+  font-size: var(--font-size-md);
+}
+
+.nav-subsection {
+  position: relative;
+  margin-left: var(--spacing-3);
+  margin-block: var(--spacing-2);
+}
+
+.nav-subsection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2.5px;
+  height: 100%;
+  background: lavender;
+  border-radius: var(--border-radius-md);
+}
+
+.nav-subitem {
+  padding-left: var(--spacing-3);
+}
+
+.nav-subitem:hover {
+  font-weight: bold;
+}
+
+.nav-link {
+  position: relative;
+  font-size: var(--font-size-sm);
+  letter-spacing: 1px;
+}
+
+.nav-link.active {
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.nav-subitem.active::after,
+.nav-subitem:hover::after {
+  --dot-size: 6px;
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0;
+  left: -2px;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: var(--border-radius-round);
+}
+
+.nav-subitem.active::after {
+  background: var(--color-primary);
+}
+
+.nav-subitem:not(.active):hover::after {
+  background: var(--color-border);
+}
+
+#main-section {
+  grid-area: main-section;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "secondary-nav"
+    "content"
+    "footer";
+}
+
+.section-header {
+  font-weight: 500;
+  font-size: var(--font-size-md);
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+#secondary-nav {
+  margin-top: 0;
+  grid-area: secondary-nav;
+  background: var(--color-surface-blurry);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--spacing-3);
+  gap: var(--spacing-2);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+#content {
+  grid-area: content;
+  margin: var(--spacing-5);
+  margin-inline: auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+#footer {
+  grid-area: footer;
+  /* Add your styling for content here */
+}
+
+@media (max-width: 768px) {
+  #layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "nav"
+      "secondary-nav"
+      "content";
+  }
+
+  #nav {
+    /* Adjust styling for side menu here for mobile view */
+  }
+
+  #main-section {
+    grid-area: content;
+    display: block;
+  }
+
+  .secondary-nav {
+    grid-area: secondary-nav;
+    /* Adjust styling for secondary nav here for mobile view */
+  }
+
+  .content {
+    grid-area: content;
+    /* Adjust styling for content here for mobile view */
+  }
+}

@@ -2,8 +2,9 @@ import { ExternalLink, service } from 'ember-primitives';
 import { colorScheme } from 'ember-primitives/color-scheme';
 
 import { Footer } from './footer';
-import { Nav } from './nav';
+import { Nav, titleize } from './nav';
 import { Prose } from './prose';
+import { SecondaryNav } from './secondary-nav';
 
 function removeAppShell() {
   document.querySelector('#initial-loader')?.remove();
@@ -39,11 +40,17 @@ const ReportingAnIssue = <template>
 
       <main id="layout">
         <Nav />
-        <section>
-          <Prose />
+        <section id="main-section">
+          <SecondaryNav />
+          <div id="content">
+            {{#if page.section}}
+              <h2 class="section-header">{{titleize page.section}}</h2>
+            {{/if}}
+            <Prose />
+          </div>
+          <Footer />
         </section>
       </main>
-      <Footer />
     {{else if page.hasError}}
       <h1>Oops!</h1>
       {{page.error}}
