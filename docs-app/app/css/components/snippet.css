@@ -1,0 +1,4 @@
+.glimdown-snippet,
+.glimdown-render {
+  margin-block: var(--spacing-4);
+}

@@ -1,0 +1,20 @@
+.callout {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  border: 1.5px solid var(--color-primary-contrast);
+  background-color: var(--color-primary-background);
+  border-radius: var(--border-radius-sm);
+}
+.callout > .icon {
+  color: var(--color-primary-contrast);
+}
+.callout > .text {
+  color: var(--color-text);
+  font-style: italic;
+}
+.callout p {
+  /* override prose styles */
+  margin: 0;
+}

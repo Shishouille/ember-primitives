@@ -28,6 +28,7 @@ h3 {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
   line-height: 1.2;
+  margin-block: var(--spacing-3);
 }
 
 h4 {
@@ -57,7 +58,7 @@ span {
 
 code,
 pre {
-  font-family: "Fragment Mono", sans-serif;
+  font-family: "Fragment Mono", monospace;
   font-weight: var(--font-weight-normal);
   line-height: 1.6;
 }
@@ -70,8 +71,8 @@ pre {
 
 code {
   word-break: keep-all;
-  /* background-color: var(--color-surface-contrast);
   border-radius: var(--border-radius-md);
+  /* background-color: var(--color-surface-contrast);
   border-width: 1px;
   border-color: var(--color-border);
   border-style: solid;

@@ -3,12 +3,22 @@ import { colorScheme } from 'ember-primitives/color-scheme';
 
 import { Moon, Sun } from './icons';
 
+function syncBodyClass() {
+  // if (colorScheme.current === 'dark') {
+  //   document.documentElement.setAttribute('data-theme', 'dark');
+  // } else {
+  //   document.documentElement.setAttribute('data-theme', 'light');
+  // }
+}
+
 function toggleTheme() {
   if (colorScheme.current === 'dark') {
     colorScheme.update('light');
   } else {
     colorScheme.update('dark');
   }
+
+  syncBodyClass();
 }
 
 function isDark() {

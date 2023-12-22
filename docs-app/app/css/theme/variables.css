@@ -1,4 +1,7 @@
 :root {
+  /* SPACE */
+  --content-width: 800px;
+
   /* FONTS */
   --font-weight-light: 100;
   --font-weight-normal: 400;

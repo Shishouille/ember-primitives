@@ -9,6 +9,7 @@
   grid-area: nav;
   height: 100%;
   border-right: 1px solid var(--color-border);
+  margin-left: var(--spacing-4);
 }
 
 /* NAVIGATION */
@@ -21,31 +22,47 @@
 #nav ul {
   padding: 0;
 }
+
+#nav .nav-link {
+  position: relative;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.5px;
+}
+
+#nav .nav-link.active {
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
 #nav a {
   text-decoration: none;
+}
+
+#nav a:not([data-active]) {
   color: var(--color-text-subdued);
 }
 
-.nav-section {
+#nav .nav-section {
   margin-left: var(--spacing-2);
 }
 
-.nav-item {
+#nav .nav-item {
   /* Add your styling for each navigation item here */
 }
 
-.nav-title {
+#nav .nav-title {
   font-weight: 500;
   font-size: var(--font-size-md);
 }
 
-.nav-subsection {
+#nav .nav-subsection {
   position: relative;
   margin-left: var(--spacing-3);
   margin-block: var(--spacing-2);
 }
 
-.nav-subsection::before {
+#nav .nav-subsection::before {
   content: "";
   position: absolute;
   top: 0;
@@ -57,24 +74,12 @@
   border-radius: var(--border-radius-md);
 }
 
-.nav-subitem {
+#nav .nav-subitem {
   padding-left: var(--spacing-3);
 }
 
-.nav-subitem:hover {
+#nav .nav-subitem:hover {
   font-weight: bold;
-}
-
-.nav-link {
-  position: relative;
-  font-size: var(--font-size-sm);
-  letter-spacing: 1px;
-}
-
-.nav-link.active {
-  font-size: var(--font-size-sm);
-  font-weight: bold;
-  color: var(--color-primary);
 }
 
 .nav-subitem.active::after,
@@ -134,13 +139,18 @@
   grid-area: content;
   margin: var(--spacing-5);
   margin-inline: auto;
-  max-width: 800px;
+  max-width: var(--content-width);
   width: 100%;
 }
 
 #footer {
   grid-area: footer;
-  /* Add your styling for content here */
+  display: flex;
+  padding: var(--spacing-3);
+  align-items: center;
+  max-width: var(--content-width);
+  width: 100%;
+  margin: auto;
 }
 
 @media (max-width: 768px) {
@@ -151,10 +161,6 @@
       "nav"
       "secondary-nav"
       "content";
-  }
-
-  #nav {
-    /* Adjust styling for side menu here for mobile view */
   }
 
   #main-section {

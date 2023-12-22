@@ -1,29 +1,43 @@
 .typedoc__type-link,
 .typedoc__unknown__yield,
 .typedoc-intrinsic {
-  border: 1px solid #222;
   display: inline-block;
-  font-style: italic;
-  font-family: monospace;
+  font-family: "Fragment Mono", monospace;
   margin: 0;
-  font-size: 0.75rem;
-  padding: 0 0.5rem;
+  font-size: var(--font-size-sm);
+  padding: 0 var(--spacing-2);
+}
+
+.typedoc-intrinsic {
+  background: var(--color-primary-background);
+  border: 2px solid var(--color-primary-contrast);
+  color: var(--color-primary-contrast);
+  font-style: normal;
+  border-radius: var(--border-radius-md);
+  padding: calc(var(--spacing-1) / 2) var(--spacing-1);
+  margin-inline: var(--spacing-1);
+  font-size: var(--font-size-xs);
 }
 
 .typedoc__type-link {
-  padding: 0 0.5rem;
+  padding: 0 var(--spacing-2);
+  border: none;
 }
 
 .typedoc-declaration-name {
   margin: 0;
   display: inline-block;
-  line-height: 1.5rem;
+  line-height: 1.5;
 }
+.typedoc-declaration .typedoc-declaration-name {
+  font-weight: bold;
+  font-family: "Fragment Mono", monospace;
+}
+
 .typedoc-declaration {
-  .typedoc-declaration-name {
-    font-weight: bold;
-  }
+  margin-block: var(--spacing-1);
 }
+
 section {
   > .typedoc-declaration {
     > .typedoc-declaration-name {
@@ -36,19 +50,19 @@ section {
   display: block;
 }
 
-.typedoc-property,
-.typedoc-component-arg {
-  padding: 0 1rem;
-}
-
 .typedoc-declaration-signatures {
   list-style: none;
+}
+
+.typedoc-name {
+  font-family: "Fragment Mono", monospace;
+  color: var(--color-primary);
 }
 
 .typedoc-named-tuple,
 .typedoc-component-arg-info {
   display: flex;
-  gap: 0.25rem;
+  gap: var(--spacing-1);
   align-items: baseline;
   justify-content: space-between;
 }
@@ -61,7 +75,11 @@ section {
 
 .typedoc-declaration-children {
   list-style: none;
-  padding: 0 0.5rem;
+  padding: 0;
+}
+
+.typedoc-declaration-children > li:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
 }
 
 /**
@@ -72,11 +90,10 @@ section {
 .typedoc__component-signature__element,
 .typedoc__component-signature__block {
   display: block;
-  padding: 0 1rem;
 }
 .typedoc__component-signature__element-type {
   display: flex;
-  gap: 0.25rem;
+  gap: var(--spacing-1);
   align-items: baseline;
   justify-content: space-between;
 }
@@ -87,27 +104,15 @@ section {
   line-height: 1.5rem;
 }
 
-.typedoc__component-signature__block .typedoc-declaration-name + .typedoc-reference {
-  margin-bottom: -0.25rem;
-}
 .typedoc__component-signature__block > .typedoc-property .typedoc-declaration-children {
   display: grid;
-  gap: 0.5rem;
-}
-.typedoc__component-signature__block
-  > .typedoc-property
-  > .typedoc-declaration
-  > ul.typedoc-declaration-children
-  > li
-  > .typedoc-declaration {
-  border: 1px solid lightgray;
-  padding: 0.5rem;
+  gap: var(--spacing-4);
 }
 
 .typedoc-component-arg {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-2);
   display: grid;
-  gap: 0.25rem;
+  gap: var(--spacing-2);
 }
 .typedoc-component-arg > .typedoc-name,
 .typedoc__component-signature__block > .typedoc__name {
@@ -120,7 +125,12 @@ section {
 
 .typedoc-component-arg .typedoc-rendered-comment p {
   margin-top: 0;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--spacing-1);
+}
+
+.typedoc-component-arg .typedoc-rendered-comment p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-1);
 }
 
 /**
@@ -130,21 +140,28 @@ section {
 }
 .typedoc__reference__name {
   display: inline;
-  border: 1px solid #222;
-  font-style: italic;
-  font-family: monospace;
-  margin: 0;
-  font-size: 0.75rem;
-  padding: 0 0.5rem;
+  border-radius: var(--border-radius-sm);
+  color: var(--color-yellow-contrast);
+  background: var(--color-yellow-transparent-light);
+  border: 1px solid var(--color-yellow-contrast);
+  padding: var(--spacing-1);
+  margin-inline: var(--spacing-1);
+  font-size: var(--font-size-xs);
+  font-family: "Fragment Mono", monospace;
 }
+
+.typedoc__literal {
+  display: inline;
+  margin-inline: var(--spacing-1);
+  font-size: var(--font-size-xs);
+  font-family: "Fragment Mono", monospace;
+}
+
 .typedoc__reference__typeArguments {
   display: inline-grid;
   width: fit-content;
   grid-auto-flow: column;
-  gap: 0.5rem;
-}
-.typedoc__reference__typeArgument {
-  border: 1px solid;
+  gap: var(--spacing-2);
 }
 
 /**
@@ -160,7 +177,7 @@ section {
  */
 .typedoc__function__type {
   display: flex;
-  gap: 0.25rem;
+  gap: var(--spacing-1);
 }
 
 .typedoc__function__type:has(.typedoc__function__parameter) {
@@ -170,17 +187,23 @@ section {
 .typedoc__function__parameters {
   margin-left: 1rem;
   display: grid;
-  gap: 0.25rem;
+  gap: var(--spacing-1);
 }
+
 .typedoc__function__parameter__container {
-  border: 1px solid;
-  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius-md);
+  margin-block: var(--spacing-1);
+  background-color: var(--color-surface-subdued);
 }
+
 .typedoc__function__parameter {
   width: fit-content;
   display: grid;
   grid-auto-flow: column;
-  gap: 0.5rem;
+  align-items: baseline;
+  gap: var(--spacing-2);
 }
 .typedoc__function__parameter__comment {
   /* font-style: italic; */
@@ -195,7 +218,7 @@ section {
 }
 .typedoc__function__parameter__name {
   font-style: italic;
-  font-family: monospace;
+  font-family: "Fragment Mono", monospace;
   font-size: 1rem;
 }
 
@@ -203,7 +226,7 @@ section {
  * Literal
  */
 .typedoc__literal {
-  font-family: monospace;
+  font-family: "Fragment Mono", monospace;
   font-size: 0.75rem;
 }
 
@@ -213,15 +236,49 @@ section {
 .typedoc__union {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: var(--spacing-1);
 }
 .typedoc__union__type {
   display: inline-flex;
-  gap: 0.25rem;
+  gap: var(--spacing-1);
 }
 .typedoc__union__type::before {
   content: "|";
 }
 .typedoc__union .typedoc__union__type:first-child::before {
   display: none;
+}
+
+table {
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+  width: 100%;
+  text-align: left;
+  vertical-align: top;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-sizing: border-box;
+  height: 0;
+}
+
+table td code,
+.typedoc__reference__typeArgument {
+  border-radius: var(--border-radius-sm);
+  color: var(--color-primary-contrast);
+  background: var(--color-primary-background);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-1);
+}
+
+tr td,
+tr th {
+  padding: var(--spacing-3);
+}
+
+thead {
+  background: var(--color-surface-contrast);
+}
+
+thead th {
+  font-weight: 600;
 }
